@@ -60,33 +60,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Education */}
-      <section id="education" className="mt-24 max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold mb-6 border-b border-gray-700 pb-2">
-          Education
-        </h2>
-        <ul className="list-disc ml-5 text-gray-300 space-y-2">
-          <li><strong>BCA (2022–2025)</strong> – Don Bosco College, Panjim</li>
-          <li><strong>HSCE - Commerce (2020–2022)</strong> – St. Michael's HSS, Taleigao</li>
-          <li><strong>SSCE (2012–2020)</strong> – Fr. Agnel High School, Pilar</li>
-        </ul>
-      </section>
-
-      {/* Skills */}
-      <section id="skills" className="mt-24 max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold mb-6 border-b border-gray-700 pb-2">
-          Core Skills & Attributes
-        </h2>
-        <ul className="grid grid-cols-2 md:grid-cols-3 gap-4 text-gray-300">
-          <li>Front-End Development</li>
-          <li>Digital Marketing</li>
-          <li>Problem Solving</li>
-          <li>Leadership & Communication</li>
-          <li>Fitness & Coaching</li>
-          <li>Event Management</li>
-        </ul>
-      </section>
-
       {/* Languages */}
       <section id="languages" className="mt-24 max-w-4xl mx-auto">
         <h2 className="text-4xl font-bold mb-6 border-b border-gray-700 pb-2">Languages</h2>
