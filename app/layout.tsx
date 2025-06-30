@@ -1,6 +1,6 @@
 // File: app/layout.tsx
 
-import './globals.css';
+import '../styles/globals.css'
 import { Poppins } from 'next/font/google';
 import type { Metadata } from 'next';
 

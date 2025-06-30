@@ -6,7 +6,7 @@ export const projects = [
     techStack: ["React", "Next.js", "Tailwind CSS"],
     tags: ["UI/UX", "Portfolio", "Responsive"],
     image: "/images/profile.png",
-    link: "https://shahid-smartportfolio.vercel.app", // ✅ ADD this
+    link: "https://shahid-smartportfolio.vercel.app",
   },
   {
     slug: "fitness-tracker-ui",
@@ -15,7 +15,8 @@ export const projects = [
     techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
     tags: ["Dashboard", "Health", "Mobile Friendly"],
     image: "/images/fitness.png",
-    link: "https://shahid-fitnesstracker.vercel.app", // ✅ ADD this
+    link: "https://shahid-fitnesstracker.vercel.app",
   },
 ];
+
 

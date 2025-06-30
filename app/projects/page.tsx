@@ -1,6 +1,6 @@
 // app/projects/[slug]/page.tsx
 // app/projects/[slug]/page.tsx
-import { projects } from '../projectData'; 
+import { projects } from '../projectData';
 import { notFound } from "next/navigation";
 import Image from "next/image";
 
