@@ -1,26 +1,31 @@
 // File: app/layout.tsx
 
-import '../styles/globals.css';
-import { Inter } from 'next/font/google';
-import type { ReactNode } from 'react';
+import './globals.css';
+import { Poppins } from 'next/font/google';
+import type { Metadata } from 'next';
 
-const inter = Inter({ subsets: ['latin'] });
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  display: 'swap',
+});
 
-export const metadata = {
-  title: 'Shahid Portfolio',
-  description: 'Front-End Developer in showcase',
+export const metadata: Metadata = {
+  title: 'Shahid Shaikh | Front-End Portfolio',
+  description: 'Ambitious front-end developer building with Next.js, React, and Tailwind CSS.',
 };
 
-type RootLayoutProps = {
-  children: ReactNode;
-};
-
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${poppins.className} bg-gray-950 text-white`}>
         {children}
       </body>
     </html>
   );
 }
+

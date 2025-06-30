@@ -2,21 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Light & dark mode variables */
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --font-sans: ui-sans-serif, system-ui, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, monospace;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Optional: Custom styles */
 body {
-  @apply bg-[var(--background)] text-[var(--foreground)] font-sans;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  font-family: sans-serif;
 }
