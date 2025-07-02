@@ -1,0 +1,4 @@
+# Path: .gitattributes
+
+# Normalize all text files for cross-platform compatibility
+* text=auto
