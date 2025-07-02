@@ -1,43 +1,72 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Path: .gitignore (Enhanced for Next.js, Vercel, TypeScript, GitHub Actions & Dev Tools)
 
-# dependencies
+# ✅ Dependencies
 /node_modules
 /.pnp
 .pnp.*
+
+# ✅ Yarn
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
-
-# next.js
+# ✅ Build & Output
 /.next/
 /out/
+/build/
+/dist/
 
-# production
-/build
+# ✅ Vercel Deployment
+.vercel
+.vercel/output.json
+.vercel/project.json
 
-# misc
-.DS_Store
-*.pem
+# ✅ GitHub & CI
+.github/
+*.yml
+*.yaml
 
-# debug
+# ✅ TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# ✅ Environment Variables
+.env
+.env.*
+
+# ✅ Logs & Debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+*.log
+*.lock
 
-# env files (can opt-in for committing if needed)
-.env*
+# ✅ IDEs & System Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
 
-# vercel
-.vercel
+# ✅ Testing & Coverage
+/coverage
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# ✅ Optional Local & Misc
+*.local
+*.pem
 
-.vercel
+# ✅ Prevent accidentally committing system binaries or editors
+*.exe
+*.out
+*.class
+*.bak
+
+# ✅ Image/asset caches
+**/*.webp.cache
+**/*.png.cache
+
+# ✅ Vercel output snapshots (if used)
+output/**
