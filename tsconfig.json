@@ -15,7 +15,7 @@
     "incremental": true,
     "baseUrl": ".",                          // ✅ Required for path alias
     "paths": {
-      "@/*": ["*"]                          // ✅ Enables @/projectData, @/styles, etc.
+    "@data/*": ["app/*"]// ✅ Enables @/projectData, @/styles, etc.
     },
     "plugins": [
       {

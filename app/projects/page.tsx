@@ -1,74 +1,40 @@
-// app/projects/[slug]/page.tsx
-// app/projects/[slug]/page.tsx
-import { projects } from '../projectData';
-import { notFound } from "next/navigation";
-import Image from "next/image";
+// Path: app/projects/page.tsx — project index page if needed
 
-interface ProjectDetailProps {
-  params: { slug: string };
-}
+import Link from 'next/link';
+import { projects } from '../../projects';
 
-export default function ProjectDetail({ params }: ProjectDetailProps) {
-  const project = projects.find((p) => p.slug === params.slug);
-
-  if (!project) return notFound();
-
+export default function ProjectsPage() {
   return (
     <main className="min-h-screen bg-gray-950 text-white px-6 py-16">
-      <section className="max-w-5xl mx-auto animate-fadeIn">
-        <h1 className="text-5xl font-bold text-blue-500 mb-4">{project.title}</h1>
-        <p className="text-gray-300 mb-6">{project.description}</p>
-
-        {project.image && (
-          <div className="relative w-full h-72 mb-8 rounded-lg overflow-hidden border border-gray-700">
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              className="object-cover"
-            />
-          </div>
-        )}
-
-        <div className="mb-6">
-          <h2 className="text-2xl font-semibold mb-2">Tech Stack</h2>
-          <ul className="flex flex-wrap gap-3 text-sm text-gray-300">
-            {project.techStack.map((tech) => (
-              <li key={tech} className="bg-gray-800 px-3 py-1 rounded-full">
-                {tech}
-              </li>
+      <section className="max-w-5xl mx-auto">
+        <h1 className="text-4xl font-bold mb-10 text-center border-b border-gray-700 pb-4">
+          All Projects
+        </h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          {projects
+            .filter((p) => p.slug !== 'fitness-tracker-ui')
+            .map((project) => (
+              <div
+                key={project.slug}
+                className="bg-gray-900 p-6 rounded-xl hover:shadow-lg transition duration-300"
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="rounded-md mb-4 border border-gray-800"
+                />
+                <h2 className="text-xl font-semibold text-blue-400 mb-2">
+                  {project.title}
+                </h2>
+                <p className="text-sm text-gray-300 mb-4">{project.description}</p>
+                <Link
+                  href={`/projects/${project.slug}`}
+                  className="text-blue-500 hover:underline text-sm"
+                >
+                  View Case Study →
+                </Link>
+              </div>
             ))}
-          </ul>
-        </div>
-
-        {project.tags && (
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold text-white mb-2">Tags</h3>
-            <div className="flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <span key={tag} className="text-xs px-3 py-1 bg-blue-700 rounded-full">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {project.link && (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-4 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition"
-          >
-            View GitHub →
-          </a>
-        )}
-
-        <div className="mt-12">
-          <a href="/" className="text-gray-400 hover:text-white hover:underline text-sm">
-            ← Back to Home
-          </a>
         </div>
       </section>
     </main>

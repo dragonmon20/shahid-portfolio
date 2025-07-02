@@ -1,8 +1,9 @@
-// File: app/layout.tsx
+// Path: app/layout.tsx
 
-import '../styles/globals.css'
+import '../styles/globals.css';
 import { Poppins } from 'next/font/google';
 import type { Metadata } from 'next';
+import Navbar from '@/components/Navbar';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -11,21 +12,17 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'Shahid Shaikh | Front-End Portfolio',
-  description: 'Ambitious front-end developer building with Next.js, React, and Tailwind CSS.',
+  title: 'Shahid Shaikh | Portfolio',
+  description: 'Frontend portfolio built with Next.js, Tailwind, and animation.',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} bg-gray-950 text-white`}>
+      <body className={`${poppins.className} bg-gradient-to-br from-black via-gray-950 to-gray-900 text-white scroll-smooth`}>
+        <Navbar />
         {children}
       </body>
     </html>
   );
 }
-
